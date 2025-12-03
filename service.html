@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Campus Printing Solution</title>
+    <link rel="stylesheet" href="stylename.css">
+<style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    padding: 30px 0;
+    background: white;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Product Grid */
+.product-grid {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    display: flex;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    align-items: center;
+    gap: 20px;
+}
+
+.product-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #f1f1f1;
+    padding: 10px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.buy-btn {
+    background: #0047ab;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.buy-btn:hover {
+    background: #52cceb;
+}
+
+/* Modal Styling */
+.modal-bg {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+.modal-box h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.modal-box label {
+    font-weight: bold;
+    margin-bottom: -10px; /* Pull input closer to label */
+}
+
+.modal-box input,
+.modal-box select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background: #0047ab;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.close-btn {
+    background: red;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+/* Footer */
+footer {
+    background-color: #0047ab;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* This makes it stick to the bottom */
+}
+footer a {
+    color: #ffde59;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .product-card img {
+        width: 180px;
+        height: 180px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Campus Printing Solution</div>
+    <nav>
+        <ul>
+            <li><a href="mainpage.html" class="active">Home</a></li>
+            <li><a href="aboutus.html" class="active">About Us</a></li>
+            <li><a href="service.html" class="active">Service</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-title">
+    <h1>Our Products</h1>
+    <p>Print Anytime, Receive it on time.</p>
+</section>
+
+<div class="product-grid">
+    
+    <div class="product-card">
+        <img src="Apparel, T-shirts printing.jpg" alt="Apparel T-shirt Printing">
+        <div class="product-info">
+            <h3>Apparel T-shirt Printing</h3>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.4 (36,029 ratings)</p>
+            <p>Vibrant, long-lasting prints on quality apparel..</p>
+            <button class="buy-btn" 
+                    data-product="Apparel T-shirt Printing"
+                    data-variants='["XS","S","M","L","XL"]'>
+                    Buy Now
+            </button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="Binding methods, coil, comb, perfect, and saddle stitching.jpg" alt="Binding">
+        <div class="product-info">
+            <h3>Binding methods</h3>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8 (36,029 ratings)</p>
+            <p>Clean, professional document finishing in multiple styles..</p>
+            <button class="buy-btn" 
+                    data-product="Binding methods"
+                    data-variants='["Binding methods","coil","comb","perfect","saddle stitching"]'>
+                    Buy Now
+            </button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="Books and invitations.jpg" alt="Books and invitations">
+        <div class="product-info">
+            <h3>Books and invitations</h3>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8 (36,029 ratings)</p>
+            <p>Custom-made designs for any occasion.</p>
+            <button class="buy-btn" 
+                    data-product="Books and invitations"
+                    data-variants='["Customize","Own Design"]'>
+                    Buy Now
+            </button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="Brochures, flyers, and pamphlets.jpg" alt="Brochures">
+        <div class="product-info">
+            <h3>Brochures & Flyers</h3>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8 (36,029 ratings)</p>
+            <p>Clear, eye-catching promotional prints.</p>
+            <button class="buy-btn" 
+                    data-product="Brochures, flyers, and pamphlets"
+                    data-variants='["Brochures","Flyers","Pamphlets"]'>
+                    Buy Now
+            </button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="Lamination.jpg" alt="Lamination">
+        <div class="product-info">
+            <h3>Lamination</h3>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8 (36,029 ratings)</p>
+            <p>Durable protection with a polished finish.</p>
+            <button class="buy-btn" 
+                    data-product="Lamination"
+                    data-variants='["ID","A4","A5","Long","Sort"]'>
+                    Buy Now
+            </button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="printing and photocopy.jpg" alt="Printing">
+        <div class="product-info">
+            <h3>Printing and Photocopy</h3>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8 (36,029 ratings)</p>
+            <p>Fast, crisp, high-quality prints every time.</p>
+            <button class="buy-btn" 
+                    data-product="Printing and Photocopy"
+                    data-variants='["A4","A5","Long","Short"]'>
+                    Buy Now
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal-bg" id="modal">
+    <div class="modal-box">
+        <h2 id="productName">Order Product</h2>
+
+        <label id="variantlabel">Select Option:</label>
+        <select id="variant"></select>
+
+        <label>Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1">
+
+        <label>Your Name:</label>
+        <input type="text" id="customerName" placeholder="Juan Dela Cruz">
+
+        <label>Contact Number:</label>
+        <input type="text" id="contact" placeholder="09XXXXXXXXX">
+
+        <label>Upload Document:</label>
+        <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.jpg,.png">
+
+        <button class="submit-btn" onclick="submitOrder()">Submit Order</button>
+        <button class="close-btn" onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 CampusPrintingSolution. All rights reserved.</p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+    const modal = document.getElementById("modal");
+    const productNameField = document.getElementById("productName");
+    const variantSelect = document.getElementById("variant");
+    const fileInput = document.getElementById("fileUpload");
+
+    document.querySelectorAll(".buy-btn").forEach(button => {
+        button.addEventListener("click", function() {
+            // Get product name
+            const name = this.dataset.product;
+            productNameField.textContent = "Order: " + name;
+
+            // Load dynamic options
+            const variants = JSON.parse(this.dataset.variants);
+            
+            // Clear old options
+            variantSelect.innerHTML = "";
+
+            // Add new options
+            variants.forEach(v => {
+                const option = document.createElement("option");
+                option.value = v;
+                option.textContent = v;
+                variantSelect.appendChild(option);
+            });
+
+            // Clear previous file input
+            fileInput.value = "";
+
+            modal.style.display = "flex";
+        });
+    });
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    function submitOrder() { 
+        // Get the selected file
+        const file = fileInput.files[0];
+        let fileMessage = "";
+
+        if (file) {
+            fileMessage = "\nFile attached: " + file.name;
+        } else {
+            fileMessage = "\nNo file attached.";
+        }
+
+        alert("Your order has been submitted!" + fileMessage + "\nThank you for buying.");  
+        closeModal(); 
+    } 
+</script>
+
+</body>
+</html>
